@@ -1,0 +1,16 @@
+<po-page-detail p-title="Execução Processo de Auditoria" (p-back)="back()">
+  <div class="po-row">
+    <po-info class="po-md-4" p-label="Descrição" [p-value]="descricao"> </po-info>
+    <po-info class="po-md-4" p-label="Processo" [p-value]="processo"> </po-info>
+  </div>
+
+  <po-list-view p-property-title="codigo" [p-items]="itens">
+    <ng-template p-list-view-content-template let-item>
+      <div class="po-row">
+        <po-info class="po-md-6" p-label="Descrição" [p-value]="item.descricao"></po-info>
+        <po-checkbox class="po-md-6" name="aprovado" p-label="Aprovado?" [(ngModel)]="item.aprovado"> </po-checkbox>
+      </div>
+    </ng-template>
+  </po-list-view>
+
+</po-page-detail>

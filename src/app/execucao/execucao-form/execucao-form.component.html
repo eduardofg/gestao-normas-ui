@@ -1,0 +1,41 @@
+<po-page-edit p-title="Execução do Processo de Auditoria" 
+              [p-disable-submit]="!reactiveForm.valid"
+              (p-save)="save()"
+              (p-cancel)="cancel()" >
+  <form [formGroup]="reactiveForm" >
+    <po-stepper>
+      <po-step p-label="Dados da execução">
+        <div class="po-row">
+          <po-input
+            class="po-md-8"
+            formControlName="descricao"
+            p-clean
+            p-label="Descrição"
+          >
+          </po-input>
+          <po-select
+            class="po-md-4"
+            formControlName="processo"
+            name="processo"
+            (p-change)="changeEvent()"
+            p-label="Processo de Auditoria"
+            [p-options]="processos"
+          >
+          </po-select>
+        </div>
+      </po-step>
+      <po-step p-label="Itens da Execução">
+        <po-table
+          [p-selectable]=true
+          (p-selected)="selectedEvent($event)"
+          (p-unselected)="unselectedEvent($event)"
+          p-striped=true
+          p-container="shadow"
+          [p-columns]=columns
+          [p-items]="itens"
+        >
+        </po-table>  
+      </po-step>
+    </po-stepper>
+  </form>
+</po-page-edit>

@@ -1,0 +1,29 @@
+<po-page-edit p-title="Processo de Auditoria" 
+              [p-disable-submit]="!reactiveForm.valid"
+              (p-save)="save()"
+              (p-cancel)="cancel()" >
+  <form [formGroup]="reactiveForm" >
+    <po-stepper>
+      <po-step p-label="Dados do processo">
+        <div class="po-row">
+          <po-input
+            class="po-md-6"
+            formControlName="descricao"
+            p-clean
+            p-label="Descrição"
+          >
+          </po-input>
+        </div>
+      </po-step>
+      <po-step p-label="Normas relacionadas">
+        <div class="po-row">
+          <po-multiselect name="normas" 
+                          class="po-md-6"
+                          formControlName="normas" 
+                          p-label="Normas" 
+                          [p-options]="options"> </po-multiselect>
+        </div>
+      </po-step>
+    </po-stepper>
+  </form>
+</po-page-edit>

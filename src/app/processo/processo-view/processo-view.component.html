@@ -1,0 +1,14 @@
+<po-page-detail p-title="Processo de Auditoria" (p-back)="back()">
+  <div class="po-row">
+    <po-info class="po-md-4" p-label="Descrição" [p-value]="descricao"> </po-info>
+  </div>
+
+  <po-list-view p-property-title="codigo" [p-items]="normas">
+    <ng-template p-list-view-content-template let-item>
+      <div class="po-row">
+        <po-info class="po-md-12" p-label="Descrição" [p-value]="item.descricao"></po-info>
+      </div>
+    </ng-template>
+  </po-list-view>
+
+</po-page-detail>
